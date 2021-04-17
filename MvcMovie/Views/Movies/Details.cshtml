@@ -10,33 +10,99 @@
     <h4>Movie</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Title)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Title)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.ReleaseDate)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.ReleaseDate)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Genre)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Genre)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Price)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Price)
         </dd>
     </dl>
 </div>
+
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
+
+<head>
+    <style>
+        table, td, th {
+            border: 1px solid black;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Review</th>
+            <th>Review Date</th>
+        </tr>
+        <tr>
+            <td>Will Scott</td>
+            <td>Such an intense movie, would definetly recommend it ro anyone!</td>
+            <td>
+                <script>document.write(new Date().toLocaleDateString());</script>
+            </td>
+        </tr>
+        <tr>
+            <td>John Constantine</td>
+            <td>It was better than expected!</td>
+            <td>
+                <script>document.write(new Date().toLocaleDateString());</script>
+            </td>
+        </tr>
+    </table>
+</body>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body>
+
+    <form action="" method="POST">
+
+        <label>
+            Name:<br>
+            <input type="text" name="Name" class="Input" style="width: 225px" required>
+        </label>
+        <br><br>
+        <label>
+            Review: <br>
+            <textarea name="Comment" class="Input" style="width: 300px" required></textarea>
+        </label>
+        <br><br>
+        <input type="submit" name="Submit" value="Submit Review" class="Submit">
+
+    </form>
+
+</body>
+
+</html>
